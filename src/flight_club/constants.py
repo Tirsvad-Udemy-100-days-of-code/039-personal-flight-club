@@ -60,6 +60,9 @@ ENV_MOCK_APP_ID = "MOCK_FLIGHTS_APP_ID"
 ## @brief Environment variable: mock flight service app key.
 ENV_MOCK_APP_KEY = "MOCK_FLIGHTS_APP_KEY"
 
+## @brief Environment variable: optional URL of the mock flight service.
+ENV_MOCK_FLIGHTS_URL = "MOCK_FLIGHTS_URL"
+
 ## @brief Environment variable: WhatsApp recipient number with country code.
 ENV_WHATSAPP_NUMBER = "WHATSAPP_NUMBER"
 
