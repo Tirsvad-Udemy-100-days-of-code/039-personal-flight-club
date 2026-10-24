@@ -18,6 +18,7 @@ from flight_club.constants import (
     ENV_MOCK_APP_KEY,
     ENV_MOCK_FLIGHTS_URL,
     ENV_SERPAPI_API_KEY,
+    ERROR_TEXT_MAX_LENGTH,
     PROVIDER_MOCK,
     PROVIDER_SERPAPI,
     REQUEST_TIMEOUT_SECONDS,
@@ -35,6 +36,8 @@ class FlightSearchError(RuntimeError):
 #
 #  The mock provider returns JSON shaped like a SerpApi Google Flights response, with
 #  the keys best_flights and other_flights, so both providers feed the same parser.
+#  The mock provider is called with the x-app-id and x-app-key headers and also with
+#  the app key as the api_key query parameter, which the service requires.
 class FlightSearch:
     ## @brief Reads the provider and its credentials from the environment.
     #  @param session Optional HTTP session; a new one is made per call if omitted.
@@ -47,10 +50,13 @@ class FlightSearch:
         if self._provider == PROVIDER_SERPAPI:
             self._api_key = self._require_env(ENV_SERPAPI_API_KEY)
         elif self._provider == PROVIDER_MOCK:
+            app_key = self._require_env(ENV_MOCK_APP_KEY)
             self._headers = {
                 "x-app-id": self._require_env(ENV_MOCK_APP_ID),
-                "x-app-key": self._require_env(ENV_MOCK_APP_KEY),
+                "x-app-key": app_key,
             }
+            # The real mock service also demands the app key as the api_key query parameter.
+            self._api_key = app_key
             self._url = os.environ.get(ENV_MOCK_FLIGHTS_URL) or DEFAULT_MOCK_FLIGHTS_URL
         else:
             raise FlightSearchError(
@@ -64,6 +70,18 @@ class FlightSearch:
         if not value:
             raise FlightSearchError(f"Environment variable {name} is not set.")
         return value
+
+    ## @brief Reads the service's own error text from a failed response.
+    #  @return The "error" string of a JSON body cut to the limit, or None if there is none.
+    @staticmethod
+    def _service_error_text(response: requests.Response) -> str | None:
+        try:
+            body = response.json()
+        except ValueError:
+            return None
+        if isinstance(body, dict) and isinstance(body.get("error"), str):
+            return str(body["error"])[:ERROR_TEXT_MAX_LENGTH]
+        return None
 
     def _get_session(self) -> requests.Session:
         # Created at call time so requests_cache.install_cache patching applies.
@@ -116,7 +134,9 @@ class FlightSearch:
             print(f"Flight search request failed: {type(error).__name__}.")
             return None
         if not 200 <= response.status_code < 300:
-            print(f"Flight search failed with HTTP {response.status_code}.")
+            detail = self._service_error_text(response)
+            suffix = f": {detail}" if detail else ""
+            print(f"Flight search failed with HTTP {response.status_code}{suffix}.")
             return None
         try:
             body = response.json()
