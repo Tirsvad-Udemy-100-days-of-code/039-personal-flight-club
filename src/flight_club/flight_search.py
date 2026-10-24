@@ -33,8 +33,8 @@ class FlightSearchError(RuntimeError):
 
 ## @brief Searches round trip flights with the provider chosen by FLIGHT_PROVIDER.
 #
-#  The mock provider is ASSUMED to return JSON shaped like a SerpApi Google Flights
-#  response, so both providers feed the same parser.
+#  The mock provider returns JSON shaped like a SerpApi Google Flights response, with
+#  the keys best_flights and other_flights, so both providers feed the same parser.
 class FlightSearch:
     ## @brief Reads the provider and its credentials from the environment.
     #  @param session Optional HTTP session; a new one is made per call if omitted.

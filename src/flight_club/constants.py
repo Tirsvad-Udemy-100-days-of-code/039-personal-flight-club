@@ -15,8 +15,8 @@ SERPAPI_URL = "https://serpapi.com/search"
 ## @brief SerpApi engine used for flight searches.
 SERPAPI_ENGINE = "google_flights"
 
-## @brief Default URL of the course's mock flight service (assumed; overridable later via env).
-DEFAULT_MOCK_FLIGHTS_URL = "https://app.100daysofpython.dev/services/flights/search"
+## @brief Default URL of the course's mock flight service (overridable via the MOCK_FLIGHTS_URL environment variable).
+DEFAULT_MOCK_FLIGHTS_URL = "https://app.100daysofpython.dev/v1/flights/search"
 
 ## @brief Host of the Sheety API.
 SHEETY_HOST = "api.sheety.co"

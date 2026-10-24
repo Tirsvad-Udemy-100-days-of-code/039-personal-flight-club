@@ -88,6 +88,16 @@ def test_check_flights_uses_mock_headers_and_default_url(
     assert kwargs["params"]["departure_id"] == "LHR"
 
 
+def test_default_mock_url_targets_flights_search_when_env_unset(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert DEFAULT_MOCK_FLIGHTS_URL.endswith("/v1/flights/search")
+    _use_mock(monkeypatch)
+    session = _session()
+    _search(session)
+    assert session.get.call_args.args[0].endswith("/v1/flights/search")
+
+
 def test_check_flights_uses_mock_url_from_env(monkeypatch: pytest.MonkeyPatch) -> None:
     _use_mock(monkeypatch)
     monkeypatch.setenv("MOCK_FLIGHTS_URL", "https://example.test/flights")
