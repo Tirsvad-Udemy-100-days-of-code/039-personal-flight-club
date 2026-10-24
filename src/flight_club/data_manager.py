@@ -45,7 +45,7 @@ class DataManager:
         if not 200 <= response.status_code < 300:
             raise DataManagerError(f"Sheety {action} failed with HTTP {response.status_code}.")
 
-    ## @brief Fetches every destination row.
+    ## @brief Fetch every destination row from the Google Sheet through the Sheety API.
     #  @return Rows such as {'city': 'Paris', 'iataCode': 'CDG', 'lowestPrice': 54, 'id': 2}.
     def get_destination_data(self) -> list[dict[str, Any]]:
         response = self._get_session().get(
