@@ -66,5 +66,11 @@ ENV_MOCK_FLIGHTS_URL = "MOCK_FLIGHTS_URL"
 ## @brief Environment variable: WhatsApp recipient number with country code.
 ENV_WHATSAPP_NUMBER = "WHATSAPP_NUMBER"
 
+## @brief Seconds pywhatkit waits for WhatsApp Web to load before it sends the message.
+WHATSAPP_WAIT_SECONDS = 15
+
+## @brief Seconds pywhatkit waits after sending before it closes the browser tab.
+WHATSAPP_CLOSE_SECONDS = 3
+
 ## @brief Seconds to wait for an HTTP response before giving up.
 REQUEST_TIMEOUT_SECONDS = 30
