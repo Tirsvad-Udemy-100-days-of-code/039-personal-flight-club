@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-24 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-24 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [1c49ffe] |
 
 ---
 
@@ -63,3 +63,4 @@ Go — all mandatory criteria pass; the one failed criterion is optional (QC-LAN
 [MIL-001]: ../../milestones/mil-001-baseline-and-setup.md
 [QC-MIL-001]: ../../../framework/qc/artifacts/qc-milestones-gateways.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
+[1c49ffe]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/1c49ffebbd94841e90fa1ff84ba0e6bf39ea3625

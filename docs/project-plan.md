@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-24 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | pending |
+| 2026-10-24 | Accepted | Jens Tirsvad Nielsen | S01 | Initial version | [1c49ffe] |
 
 ---
 
@@ -93,3 +93,4 @@ A No-Go on a phase moves every later date by the rework time.
 [MIL-003]: ./milestones/mil-003-flight-search-and-data.md
 [MIL-004]: ./milestones/mil-004-notification-and-main.md
 [MIL-005]: ./milestones/mil-005-documentation-and-wiki.md
+[1c49ffe]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/1c49ffebbd94841e90fa1ff84ba0e6bf39ea3625
