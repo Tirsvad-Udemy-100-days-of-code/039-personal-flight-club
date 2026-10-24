@@ -74,3 +74,6 @@ WHATSAPP_CLOSE_SECONDS = 3
 
 ## @brief Seconds to wait for an HTTP response before giving up.
 REQUEST_TIMEOUT_SECONDS = 30
+
+## @brief The longest piece of the flight service's error text that is printed.
+ERROR_TEXT_MAX_LENGTH = 200

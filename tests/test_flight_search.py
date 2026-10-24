@@ -84,7 +84,7 @@ def test_check_flights_uses_mock_headers_and_default_url(
     args, kwargs = session.get.call_args
     assert args == (DEFAULT_MOCK_FLIGHTS_URL,)
     assert kwargs["headers"] == {"x-app-id": APP_ID, "x-app-key": APP_KEY}
-    assert "api_key" not in kwargs["params"]
+    assert kwargs["params"]["api_key"] == APP_KEY
     assert kwargs["params"]["departure_id"] == "LHR"
 
 
@@ -133,6 +133,42 @@ def test_check_flights_returns_none_on_http_error(
 ) -> None:
     assert _search(_session(status=500)) is None
     assert "500" in capsys.readouterr().out
+
+
+def test_check_flights_prints_service_error_text_on_http_error(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    _use_mock(monkeypatch)
+    text = "Invalid input: expected string, received undefined"
+    assert _search(_session(status=400, body={"error": text})) is None
+    captured = capsys.readouterr()
+    assert f"Flight search failed with HTTP 400: {text}." in captured.out
+    for secret in (API_KEY, APP_ID, APP_KEY):
+        assert secret not in captured.out + captured.err
+
+
+def test_check_flights_truncates_long_service_error_text(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    assert _search(_session(status=400, body={"error": "x" * 500})) is None
+    out = capsys.readouterr().out
+    assert "x" * 200 in out
+    assert "x" * 201 not in out
+
+
+@pytest.mark.parametrize("body", [["error"], {"error": 5}, {"other": "x"}])
+def test_check_flights_falls_back_when_error_body_is_not_text(
+    capsys: pytest.CaptureFixture[str], body: Any
+) -> None:
+    assert _search(_session(status=500, body=body)) is None
+    assert capsys.readouterr().out == "Flight search failed with HTTP 500.\n"
+
+
+def test_check_flights_falls_back_when_error_body_is_not_json(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    assert _search(_session(status=502, invalid_json=True)) is None
+    assert capsys.readouterr().out == "Flight search failed with HTTP 502.\n"
 
 
 def test_check_flights_returns_none_on_invalid_json(
