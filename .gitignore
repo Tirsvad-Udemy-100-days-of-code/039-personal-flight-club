@@ -26,3 +26,6 @@ docs/doxygen/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Written by pywhatkit; holds message history and phone numbers
+PyWhatKit_DB.txt
