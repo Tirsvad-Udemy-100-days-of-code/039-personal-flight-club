@@ -62,3 +62,6 @@ ENV_MOCK_APP_KEY = "MOCK_FLIGHTS_APP_KEY"
 
 ## @brief Environment variable: WhatsApp recipient number with country code.
 ENV_WHATSAPP_NUMBER = "WHATSAPP_NUMBER"
+
+## @brief Seconds to wait for an HTTP response before giving up.
+REQUEST_TIMEOUT_SECONDS = 30

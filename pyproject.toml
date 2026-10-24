@@ -36,3 +36,12 @@ target-version = "py313"
 [tool.mypy]
 strict = true
 python_version = "3.13"
+
+# The shared CI quality job runs mypy without the project dependencies installed.
+[[tool.mypy.overrides]]
+module = ["requests", "requests_cache", "dotenv", "pywhatkit", "pytest"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_decorators = false
