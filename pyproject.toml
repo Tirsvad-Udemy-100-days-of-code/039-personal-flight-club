@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flight-club"
+version = "0.1.0"
+description = "Day 39 capstone: find cheap flights listed in a Google Sheet and send a WhatsApp message."
+readme = "README.md"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+dependencies = [
+    "requests",
+    "requests-cache",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+whatsapp = ["pywhatkit"]
+dev = ["pytest", "pytest-cov", "ruff", "mypy", "types-requests"]
+
+[project.scripts]
+flight-club = "flight_club.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.mypy]
+strict = true
+python_version = "3.13"
