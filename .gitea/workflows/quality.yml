@@ -10,6 +10,6 @@ jobs:
   quality:
     permissions:
       contents: read
-    uses: TirSystem/github-action/.gitea/workflows/quality-checks.yml@v1
+    uses: TirSystem/git-workflows/.gitea/workflows/quality-checks.yml@v1
     with:
       languages: python,shell
