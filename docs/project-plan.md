@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-24 | Deprecated | Jens Tirsvad Nielsen | S01 | Initial version | [1c49ffe] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway (MIL-006) with its schedule row, scope coverage, dependency, risk and Gantt entries; linked the milestones of the git host; added the sources of the planning assumptions, the rule for a No-Go and Open Issues; set the domain to education; reviewed against QC-PP-001 for the first time, in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway (MIL-006) with its schedule row, scope coverage, dependency, risk and Gantt entries; linked the milestones of the git host; added the sources of the planning assumptions, the rule for a No-Go and Open Issues; set the domain to education; reviewed against QC-PP-001 for the first time, in autonomous mode, not independent | [2267fc7] |
 
 ---
 
@@ -112,3 +112,4 @@ A No-Go on a phase moves every later date and the end date of the plan by the re
 [Milestone 241]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/milestone/241
 [MIL-006]: ./milestones/mil-006-framework-baseline.md
 [MIL-006 milestone]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/milestone/554
+[2267fc7]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/2267fc7ec4a058d6044ab320ecee62f472c15cea

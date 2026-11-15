@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version; created with the baseline milestone and its review records (autonomous, not independent) | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version; created with the baseline milestone and its review records (autonomous, not independent) | [2267fc7] |
 
 ---
 
@@ -74,3 +74,4 @@ Tracks backward and forward links between the artifact instances of Personal Fli
 [RC-009]: ./reviews/rc-009-project-plan-baseline.md
 [RC-010]: ./reviews/rc-010-milestone-006.md
 [RC-011]: ./reviews/rc-011-wiki.md
+[2267fc7]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/2267fc7ec4a058d6044ab320ecee62f472c15cea

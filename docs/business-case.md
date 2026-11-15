@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-24 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [1c49ffe] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 6, success criterion 7, a scope item, an out-of-scope item, a risk and a constraint for the baseline milestone MIL-006; corrected the owner name in the hosting URL; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 6, success criterion 7, a scope item, an out-of-scope item, a risk and a constraint for the baseline milestone MIL-006; corrected the owner name in the hosting URL; set the domain to education; reviewed in autonomous mode, not independent | [2267fc7] |
 
 ---
 
@@ -138,3 +138,4 @@ Proceed — the scope is small, the risks are mitigated, and the result serves a
 [PP-001]: ./project-plan.md
 [1c49ffe]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/1c49ffebbd94841e90fa1ff84ba0e6bf39ea3625
 [MIL-006]: ./milestones/mil-006-framework-baseline.md
+[2267fc7]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/commit/2267fc7ec4a058d6044ab320ecee62f472c15cea
