@@ -1,14 +1,10 @@
-**English**
+**Personal Flight Club**
 
 - [Home](Home)
 - [Getting started](Getting-Started)
 
-**Dansk**
+**Languages**
 
-- [Forside](Home-da)
-- [Kom i gang](Getting-Started-da)
-
-**Bahasa Malaysia**
-
-- [Laman utama](Home-ms)
-- [Bermula](Getting-Started-ms)
+- English: [Home](Home)
+- Dansk: [Hjem](Home-da)
+- Bahasa Malaysia: [Utama](Home-ms)

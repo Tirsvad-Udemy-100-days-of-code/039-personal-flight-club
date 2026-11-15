@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,12 +8,19 @@ version = "0.1.0"
 description = "Day 39 capstone: find cheap flights listed in a Google Sheet and send a WhatsApp message."
 readme = "README.md"
 requires-python = ">=3.13"
-license = { file = "LICENSE" }
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Jens Tirsvad Nielsen" }]
 dependencies = [
     "requests",
     "requests-cache",
     "python-dotenv",
 ]
+
+[project.urls]
+Repository = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club"
+Documentation = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/wiki"
+"Issue tracker" = "https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/issues"
 
 [project.optional-dependencies]
 whatsapp = ["pywhatkit"]

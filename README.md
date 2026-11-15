@@ -27,6 +27,8 @@ The program keeps the assignment's class and function names.
 | `constants.py` | All constants (URLs, origin airport, currency, cache settings, variable names) |
 | `cache.py` | Local response cache that never stores the Sheety answers |
 
+Besides the program, the repository holds `tests/`, `docs/` (the project documents and, in `docs/wiki/`, the pages of the wiki), `Doxyfile` for the source documentation, `framework/` (the SQA and QC framework, a git submodule that the project documents follow), `.editorconfig` (the editor settings of its baseline) and `.env.example` (placeholders for the settings of the program and for the git host tokens that the framework scripts read; the program ignores the tokens).
+
 ![A sample run with mock data](docs/images/sample-run.png)
 
 ## 📋 Requirements
@@ -100,7 +102,7 @@ Optional checks used by the CI: `python -m ruff check .`, `python -m ruff format
 
 ## 📄 License
 
-See [LICENSE][license].
+The project is licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only); see the [LICENSE][license] file.
 
 ## 🔗 Links
 
@@ -114,14 +116,12 @@ The documents a newcomer needs, in reading order.
 
 | Document | What it tells you |
 | --- | --- |
-| [AGENTS.md][agents] | The rules AI agents follow in this repository |
 | [Business Case][BC-001] | Why the project exists, its scope and success criteria |
 | [Stakeholder Analysis][SA-001] | Who is involved; the stakeholder IDs used for owners and reviewers |
 | [Project Plan][PP-001] | The gateways and their schedule |
 | [Milestones][milestones] | One document per gateway: Go/No-Go criteria and tasks |
 | [Artifact registry][registry] | Where each artifact type lives, the next version, the PO language and domain |
-| [Framework README][framework-readme] | The framework this project uses |
-| [Framework changelog][framework-changelog] | What changed in each framework release |
+| [Traceability matrix][TM-001] | How the artifacts link and when each was last reviewed |
 
 ---
 
@@ -129,11 +129,9 @@ The documents a newcomer needs, in reading order.
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/039-personal-flight-club/issues
-[agents]: ./AGENTS.md
 [BC-001]: ./docs/business-case.md
 [SA-001]: ./docs/stakeholder-analysis.md
 [PP-001]: ./docs/project-plan.md
 [milestones]: ./docs/milestones/
 [registry]: ./docs/artifact-registry.md
-[framework-readme]: ./framework/README.md
-[framework-changelog]: ./framework/CHANGELOG.md
+[TM-001]: ./docs/sqa/traceability-matrix.md

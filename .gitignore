@@ -29,3 +29,6 @@ Thumbs.db
 
 # Written by pywhatkit; holds message history and phone numbers
 PyWhatKit_DB.txt
+
+# AI prompt log (local only)
+/docs/ai-prompts/

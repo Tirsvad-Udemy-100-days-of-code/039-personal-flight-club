@@ -62,6 +62,7 @@ Go — all mandatory criteria pass; the one failed criterion is optional (QC-LAN
 
 ---
 
+[BC-001]: ../../business-case.md
 [SA-001]: ../../stakeholder-analysis.md
 [QC-SA-001]: ../../../framework/qc/artifacts/qc-stakeholder-analysis.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
