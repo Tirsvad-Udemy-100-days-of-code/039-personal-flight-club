@@ -60,6 +60,7 @@ Go — all mandatory criteria pass; the one failed criterion is optional (QC-LAN
 
 ---
 
+[BC-001]: ../../business-case.md
 [MIL-003]: ../../milestones/mil-003-flight-search-and-data.md
 [QC-MIL-001]: ../../../framework/qc/artifacts/qc-milestones-gateways.md
 [QC-LANG-001]: ../../../framework/qc/artifacts/qc-language-domain.md
